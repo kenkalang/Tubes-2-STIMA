@@ -1,0 +1,30 @@
+D:\Semester 4\Stima\Tubes\2\ini vcs\bin\Debug\net6.0\ini vcs.exe
+D:\Semester 4\Stima\Tubes\2\ini vcs\bin\Debug\net6.0\ini vcs.deps.json
+D:\Semester 4\Stima\Tubes\2\ini vcs\bin\Debug\net6.0\ini vcs.runtimeconfig.json
+D:\Semester 4\Stima\Tubes\2\ini vcs\bin\Debug\net6.0\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\ini vcs\bin\Debug\net6.0\ini vcs.pdb
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.csproj.AssemblyReference.cache
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.AssemblyInfoInputs.cache
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.AssemblyInfo.cs
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.csproj.CoreCompileInputs.cache
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\refint\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.pdb
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ini vcs.genruntimeconfig.cache
+D:\Semester 4\Stima\Tubes\2\ini vcs\obj\Debug\net6.0\ref\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\github\bin\Debug\net6.0\ini vcs.exe
+D:\Semester 4\Stima\Tubes\2\github\bin\Debug\net6.0\ini vcs.deps.json
+D:\Semester 4\Stima\Tubes\2\github\bin\Debug\net6.0\ini vcs.runtimeconfig.json
+D:\Semester 4\Stima\Tubes\2\github\bin\Debug\net6.0\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\github\bin\Debug\net6.0\ini vcs.pdb
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.csproj.AssemblyReference.cache
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.AssemblyInfoInputs.cache
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.AssemblyInfo.cs
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.csproj.CoreCompileInputs.cache
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\refint\ini vcs.dll
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.pdb
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ini vcs.genruntimeconfig.cache
+D:\Semester 4\Stima\Tubes\2\github\obj\Debug\net6.0\ref\ini vcs.dll
