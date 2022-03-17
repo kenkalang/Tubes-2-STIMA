@@ -11,7 +11,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string rootPath = @"D:\testfolder";
+            Console.WriteLine("Masukkan directory : ");
+            string rootPath = @Console.ReadLine();
 
             Console.WriteLine("Masukkan file : ");
             string dicari = Console.ReadLine();
