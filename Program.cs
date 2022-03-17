@@ -11,7 +11,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string rootPath = @"D:\Semester 4";
+            string rootPath = @"D:\testfolder";
 
             Console.WriteLine("Masukkan file : ");
             string dicari = Console.ReadLine();
@@ -19,14 +19,24 @@ namespace ConsoleApp1
             Console.WriteLine("Cari semua kemungkinan? (Y/N)");
             string kemungkinan = Console.ReadLine();
 
+
+            Console.WriteLine("Metode digunakan : (ketik 1 atau 2)");
+            Console.WriteLine("1. DFS ");
+            Console.WriteLine("2. BFS ");
+            string metode = Console.ReadLine();
             // string[] dirs = Directory.GetDirectories(rootPath, "*", SearchOption.AllDirectories);
             //  Console.WriteLine("Hello World!");
 
 
             var files = Directory.GetFiles(rootPath, "*.*");
 
+            Queue<string> pencarian = new Queue<string>();
 
-            BFS(kemungkinan, dicari, rootPath);
+            if (metode == "1")
+                DFS(kemungkinan, dicari, rootPath);
+            else if (metode == "2")
+                BFS(kemungkinan, dicari, rootPath);
+
         }
         public static void DFS(string kemungkinan, string dicari, string path)
         {
@@ -49,6 +59,7 @@ namespace ConsoleApp1
                 }
                 else
                 {
+
                     Console.WriteLine(file);
                 }
             }
@@ -57,21 +68,30 @@ namespace ConsoleApp1
 
             foreach (string subfolder in folder)
             {
-                DFS(kemungkinan, dicari,subfolder);
+                Console.WriteLine(Path.GetFullPath(subfolder));
+                DFS(kemungkinan, dicari, subfolder);
 
             }
 
         }
 
+
         public static void BFS(string kemungkinan, string dicari, string path)
         {
             Queue<DirectoryInfo> visited = new Queue<DirectoryInfo>();
+            Queue<string> namafile = new Queue<string>();
             visited.Enqueue(new DirectoryInfo(path));
-            while (visited.Count > 0)
+            while (visited.Any())
             {
                 DirectoryInfo current = visited.Dequeue();
-                Console.WriteLine(current.FullName);
                 var isi = Directory.GetFiles(current.FullName, "*.*");
+                Console.WriteLine(Path.GetFullPath(current.FullName));
+
+                DirectoryInfo[] children = current.GetDirectories();
+                foreach (DirectoryInfo child in children)
+                {
+                    visited.Enqueue(child);
+                }
                 foreach (string file in isi)
                 {
                     if (Path.GetFileName(file) == dicari)
@@ -94,17 +114,53 @@ namespace ConsoleApp1
                     }
                 }
 
-                DirectoryInfo[] children = current.GetDirectories();
-                foreach (DirectoryInfo child in children)
-                {
-                    visited.Enqueue(child);
-                }
             }
 
         }
 
+        public static void Search(string dir, string dicari, string kemungkinan)
+        {
+            string[] files = Directory.GetFiles(dir);
+            string[] dirs = Directory.GetDirectories(dir);
+
+            List<string> allfiles = new List<string>();
+            allfiles.AddRange(files);
+            allfiles.AddRange(dirs);
+            foreach (string cek in allfiles)
+            {
+                if (Directory.Exists(cek))
+                {
+                    Search(cek, dicari, kemungkinan);
+                    continue;
+                }
+
+
+                if (Path.GetFileName(cek) == dicari)
+                {
+                    if (kemungkinan == "N")
+                    {
+                        Console.WriteLine(Path.GetFullPath(cek) + " KETEMU JEMBUOTTTTTTT");
+                        System.Environment.Exit(0);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(Path.GetFullPath(cek) + " KETEMU JEMBUOTTTTTTT");
+                        continue;
+                    }
+                }
+                else if (Path.GetFileName(cek) != dicari)
+                {
+                    Console.WriteLine(cek);
+                }
+
+            }
 
 
 
+
+
+
+        }
     }
 }
