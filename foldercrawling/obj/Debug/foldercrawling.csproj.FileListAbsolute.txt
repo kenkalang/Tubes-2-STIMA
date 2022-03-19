@@ -13,3 +13,13 @@ D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Aut
 D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
 D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
 D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\obj\Debug\foldercrawling.csproj.CopyComplete
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+D:\Semester 4\Stima\Tubes\2\newtubes\foldercrawling\foldercrawling\obj\Debug\foldercrawling.Form1.resources

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using cariBFS;
-using cariDFS;
+using pencarian;
+
 
 namespace foldercrawling
 {
@@ -17,15 +17,13 @@ namespace foldercrawling
         [STAThread]
         static void Main(string[] args)
         {
-            Console.WriteLine("Pilih directory : ");
-            string rootPath = @Console.ReadLine();
+            string rootPath = @"D:\testfolder";
 
             Console.WriteLine("Masukkan file : ");
             string dicari = Console.ReadLine();
 
             Console.WriteLine("Cari semua kemungkinan? (Y/N)");
             string kemungkinan = Console.ReadLine();
-
 
             Console.WriteLine("Metode digunakan : (ketik 1 atau 2)");
             Console.WriteLine("1. DFS ");
@@ -34,20 +32,17 @@ namespace foldercrawling
             // string[] dirs = Directory.GetDirectories(rootPath, "*", SearchOption.AllDirectories);
             //  Console.WriteLine("Hello World!");
 
-
             var files = Directory.GetFiles(rootPath, "*.*");
+
+            file baru = new file(dicari, kemungkinan);
 
             Queue<string> pencarian = new Queue<string>();
 
             if (metode == "1")
-                pencarianDFS.DFS(kemungkinan, dicari, rootPath);
+                baru.DFS(rootPath);
             else if (metode == "2")
-                pencarianBFS.BFS(kemungkinan, dicari, rootPath);
+                baru.BFS(rootPath);
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            
 
         }
 
