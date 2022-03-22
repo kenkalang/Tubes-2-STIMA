@@ -25,6 +25,7 @@ namespace foldercrawling
             Console.WriteLine("Cari semua kemungkinan? (Y/N)");
             string kemungkinan = Console.ReadLine();
 
+
             Console.WriteLine("Metode digunakan : (ketik 1 atau 2)");
             Console.WriteLine("1. DFS ");
             Console.WriteLine("2. BFS ");
@@ -32,16 +33,27 @@ namespace foldercrawling
             // string[] dirs = Directory.GetDirectories(rootPath, "*", SearchOption.AllDirectories);
             //  Console.WriteLine("Hello World!");
 
-            var files = Directory.GetFiles(rootPath, "*.*");
-
             file baru = new file(dicari, kemungkinan);
 
-            Queue<string> pencarian = new Queue<string>();
-
             if (metode == "1")
+            {
                 baru.DFS(rootPath);
+                baru.show_queue();
+                baru.viewer.Graph = baru.graph;
+                //associate the viewer with the form 
+                baru.form.SuspendLayout();
+                baru.viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                baru.form.Controls.Add(baru.viewer);
+                baru.form.ResumeLayout();
+                //show the form 
+                baru.form.ShowDialog();
+            }
+
             else if (metode == "2")
+            {
                 baru.BFS(rootPath);
+                baru.show_graf_BFS();
+            }
 
 
         }
