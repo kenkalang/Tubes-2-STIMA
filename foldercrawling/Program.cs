@@ -38,15 +38,7 @@ namespace foldercrawling
             if (metode == "1")
             {
                 baru.DFS(rootPath);
-                baru.show_queue();
-                baru.viewer.Graph = baru.graph;
-                //associate the viewer with the form 
-                baru.form.SuspendLayout();
-                baru.viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-                baru.form.Controls.Add(baru.viewer);
-                baru.form.ResumeLayout();
-                //show the form 
-                baru.form.ShowDialog();
+                baru.show_graph_DFS();
             }
 
             else if (metode == "2")

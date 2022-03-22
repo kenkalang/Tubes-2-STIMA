@@ -39,6 +39,7 @@ namespace pencarian
         public Stack<folderfile> fileDFS;
         public Queue<folderfile> visited;
         public Queue<folderfile> penyimpanan;
+        public Queue<folderfile> ketemuhasil;
         //create a form 
         public System.Windows.Forms.Form form = new System.Windows.Forms.Form();
         //create a viewer object 
@@ -54,6 +55,7 @@ namespace pencarian
             visited = new Queue<folderfile>();
             penyimpanan = new Queue<folderfile>();
             fileDFS = new Stack<folderfile>();
+            ketemuhasil = new Queue<folderfile>();
         }
 
         public void BFS(string path)
@@ -95,6 +97,7 @@ namespace pencarian
                     {
                         Console.WriteLine(Path.GetFullPath(path) + " KETEMU JEMBUOTTTTTTT");
                     }
+                    cari_bapak(path);
                 }
                 else
                 {
@@ -110,12 +113,25 @@ namespace pencarian
 
         }
 
+        public void cari_bapak(string anak)
+        {
+            foreach (folderfile cek in penyimpanan)
+            {
+                if (cek.anakfolder == anak)
+                {
+                    string bapak = cek.parent;
+                    ketemuhasil.Enqueue(new folderfile(cek.parent, cek.anakfolder));
+                    cari_bapak(cek.parent);
+                }
+            }
+        }
+
         public void DFS(string path)
         {
             string[] isi = Directory.GetFiles(path, "*.*");
             foreach (string file in isi)
             {
-                visited.Enqueue(new folderfile(path, file));
+                penyimpanan.Enqueue(new folderfile(path, file));
 
 
                 if (Path.GetFileName(file) == namafile)
@@ -124,29 +140,19 @@ namespace pencarian
                     {
                         Console.WriteLine(Path.GetFullPath(file) + " KETEMU JEMBUOTTTTTTT");
                         found = true;
-                        graph.AddEdge(Path.GetFullPath(path), Path.GetFullPath(file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-                        graph.FindNode(file).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
-                        graph.FindNode(file).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
-
+                        cari_bapak(file);
                     }
                     else
                     {
                         Console.WriteLine(Path.GetFullPath(file) + " KETEMU JEMBUOTTTTTTT");
-                        graph.AddEdge(Path.GetFullPath(path), Path.GetFullPath(file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-                        graph.FindNode(file).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
-                        graph.FindNode(file).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
-                        graph.FindNode(file).Label.Text = new DirectoryInfo(file).Name;
+                        cari_bapak(file);
                         continue;
                     }
                 }
                 else
                 {
-                    graph.AddEdge(Path.GetFullPath(path), Path.GetFullPath(file));
-
                     Console.WriteLine(file);
                 }
-                graph.FindNode(path).Label.Text = new DirectoryInfo(path).Name;
-                graph.FindNode(file).Label.Text = new DirectoryInfo(file).Name;
             }
 
             string[] folder = Directory.GetDirectories(path);
@@ -157,13 +163,92 @@ namespace pencarian
                 {
                     Console.WriteLine(subfolder);
 
-                    visited.Enqueue(new folderfile(path, subfolder));
-                    graph.AddEdge(Path.GetFullPath(path), Path.GetFullPath(subfolder));
-                    graph.FindNode(path).Label.Text = new DirectoryInfo(path).Name;
-                    graph.FindNode(subfolder).Label.Text = new DirectoryInfo(subfolder).Name;
+                    penyimpanan.Enqueue(new folderfile(path, subfolder));
                     DFS(subfolder);
                 }
             }
+        }
+
+        public void show_graph_DFS()
+        {
+
+            bool ada = false;
+            bool jabingan;
+            foreach (folderfile cek in penyimpanan)
+            {
+                jabingan = false;
+
+                FileAttributes attr = File.GetAttributes(cek.anakfolder);
+                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    foreach (folderfile gajetot in ketemuhasil)
+                    {
+                        if (Path.GetFullPath(gajetot.parent) == cek.anakfolder || Path.GetFullPath(gajetot.anakfolder) == cek.anakfolder)
+                        {
+                            graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                            jabingan = true;
+                            break;
+                        }
+                    }
+                    if (jabingan == false)
+                    {
+                        graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                    }
+                }
+                else
+                {
+                    if (Path.GetFileName(cek.anakfolder) == namafile)
+                    {
+                        if (kemungkinan == "N" && ada == false)
+                        {
+                            graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                            graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+                            graph.FindNode(cek.anakfolder).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+                            ada = true;
+                            break;
+
+                        }
+                        else
+                        {
+                            graph.AddEdge(cek.parent, cek.anakfolder).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                            graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+                            graph.FindNode(cek.anakfolder).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+                            graph.FindNode(cek.anakfolder).Label.Text = new DirectoryInfo(cek.anakfolder).Name;
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                    }
+                }
+
+                graph.FindNode(cek.parent).Label.Text = new DirectoryInfo(cek.parent).Name;
+                graph.FindNode(cek.anakfolder).Label.Text = new DirectoryInfo(cek.anakfolder).Name;
+            }
+
+            folderfile warnajalur;
+            while (ketemuhasil.Count > 0)
+            {
+                warnajalur = new folderfile(ketemuhasil.Dequeue());
+                graph.FindNode(warnajalur.parent).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                graph.FindNode(warnajalur.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                graph.FindNode(warnajalur.parent).Label.Text = new DirectoryInfo(warnajalur.parent).Name;
+                graph.FindNode(warnajalur.anakfolder).Label.Text = new DirectoryInfo(warnajalur.anakfolder).Name;
+
+            }
+            viewer.Graph = graph;
+            //associate the viewer with the form 
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            //show the form 
+            form.ShowDialog();
+
+
         }
 
 
@@ -193,13 +278,28 @@ namespace pencarian
         public void show_graf_BFS()
         {
             bool ada = false;
+            bool jabingan;
             foreach (folderfile cek in penyimpanan)
             {
+                jabingan = false;
 
                 FileAttributes attr = File.GetAttributes(cek.anakfolder);
                 if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
                 {
-                    graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder));
+                    foreach (folderfile gajetot in ketemuhasil)
+                    {
+                        if (Path.GetFullPath(gajetot.parent) == cek.anakfolder || Path.GetFullPath(gajetot.anakfolder) == cek.anakfolder)
+                        {
+                            graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                            jabingan = true;
+                            break;
+                        }
+                    }
+                    if (jabingan == false)
+                    {
+                        graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                    }
                 }
                 else
                 {
@@ -207,11 +307,10 @@ namespace pencarian
                     {
                         if (kemungkinan == "N" && ada == false)
                         {
-                            ada = true;
-                            graph.AddEdge(cek.parent, cek.anakfolder).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                            graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
                             graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
                             graph.FindNode(cek.anakfolder).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
-                            graph.FindNode(cek.anakfolder).Label.Text = new DirectoryInfo(cek.anakfolder).Name;
+                            ada = true;
                             break;
 
                         }
@@ -226,7 +325,8 @@ namespace pencarian
                     }
                     else
                     {
-                        graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder));
+                        graph.AddEdge(Path.GetFullPath(cek.parent), Path.GetFullPath(cek.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graph.FindNode(cek.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                     }
                 }
 
@@ -239,12 +339,25 @@ namespace pencarian
             {
                 tempo = new folderfile(visited.Dequeue());
 
-                graph.AddEdge(Path.GetFullPath(tempo.parent), Path.GetFullPath(tempo.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Maroon;
+                graph.AddEdge(Path.GetFullPath(tempo.parent), Path.GetFullPath(tempo.anakfolder)).Attr.Color = Microsoft.Msagl.Drawing.Color.Gray;
                 graph.FindNode(tempo.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Gray;
                 graph.FindNode(tempo.parent).Label.Text = new DirectoryInfo(tempo.parent).Name;
                 graph.FindNode(tempo.anakfolder).Label.Text = new DirectoryInfo(tempo.anakfolder).Name;
 
             }
+
+            folderfile warnajalur;
+            while (ketemuhasil.Count > 0)
+            {
+                warnajalur = new folderfile(ketemuhasil.Dequeue());
+                graph.FindNode(warnajalur.parent).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                graph.FindNode(warnajalur.anakfolder).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                graph.FindNode(warnajalur.parent).Label.Text = new DirectoryInfo(warnajalur.parent).Name;
+                graph.FindNode(warnajalur.anakfolder).Label.Text = new DirectoryInfo(warnajalur.anakfolder).Name;
+
+            }
+
+
             viewer.Graph = graph;
             //associate the viewer with the form 
             form.SuspendLayout();
@@ -254,6 +367,7 @@ namespace pencarian
             //show the form 
             form.ShowDialog();
         }
+
 
     }
 }
