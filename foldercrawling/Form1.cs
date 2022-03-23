@@ -41,11 +41,14 @@ namespace foldercrawling
             file baru = new file(dicari, kemungkinan);
             if (metode == true)
             {
+                label4.Text = kemungkinan;
                 baru.DFS(rootPath);
                 baru.show_graph_DFS();
             }
             else if (metode == false)
             {
+                label4.Text = kemungkinan;
+
                 baru.BFS(rootPath);
                 baru.show_graf_BFS();
             }
@@ -66,15 +69,20 @@ namespace foldercrawling
             dicari = boxFile.Text.ToLower();
         }
 
-        private void checkAll_CheckedChanged(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            if (checkAll.Checked)
+            
+        }
+
+        private void radioYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioYes.Checked)
             {
                 kemungkinan = "Y";
             }
-            else
+            if (radioNo.Checked)
             {
-                kemungkinan = "N"   ;
+                kemungkinan = "N";
             }
         }
     }

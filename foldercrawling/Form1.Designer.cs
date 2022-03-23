@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.checkAll = new System.Windows.Forms.CheckBox();
             this.bfsRadio = new System.Windows.Forms.RadioButton();
             this.dfsRadio = new System.Windows.Forms.RadioButton();
             this.startButton = new System.Windows.Forms.Button();
@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.directoryBox = new System.Windows.Forms.TextBox();
+            this.radioYes = new System.Windows.Forms.RadioButton();
+            this.radioNo = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -52,18 +54,6 @@
             this.label1.Size = new System.Drawing.Size(146, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select starting directory";
-            // 
-            // checkAll
-            // 
-            this.checkAll.AutoSize = true;
-            this.checkAll.Location = new System.Drawing.Point(19, 170);
-            this.checkAll.Margin = new System.Windows.Forms.Padding(4);
-            this.checkAll.Name = "checkAll";
-            this.checkAll.Size = new System.Drawing.Size(138, 20);
-            this.checkAll.TabIndex = 2;
-            this.checkAll.Text = "Find all occurence";
-            this.checkAll.UseVisualStyleBackColor = true;
-            this.checkAll.CheckedChanged += new System.EventHandler(this.checkAll_CheckedChanged);
             // 
             // bfsRadio
             // 
@@ -154,6 +144,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 348);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // directoryBox
             // 
@@ -162,11 +153,37 @@
             this.directoryBox.Size = new System.Drawing.Size(280, 22);
             this.directoryBox.TabIndex = 12;
             // 
+            // radioYes
+            // 
+            this.radioYes.AutoSize = true;
+            this.radioYes.Location = new System.Drawing.Point(19, 170);
+            this.radioYes.Name = "radioYes";
+            this.radioYes.Size = new System.Drawing.Size(52, 20);
+            this.radioYes.TabIndex = 13;
+            this.radioYes.TabStop = true;
+            this.radioYes.Text = "Yes";
+            this.radioYes.UseVisualStyleBackColor = true;
+            this.radioYes.CheckedChanged += new System.EventHandler(this.radioYes_CheckedChanged);
+            // 
+            // radioNo
+            // 
+            this.radioNo.AutoSize = true;
+            this.radioNo.Location = new System.Drawing.Point(104, 170);
+            this.radioNo.Name = "radioNo";
+            this.radioNo.Size = new System.Drawing.Size(46, 20);
+            this.radioNo.TabIndex = 14;
+            this.radioNo.TabStop = true;
+            this.radioNo.Text = "No";
+            this.radioNo.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1049, 372);
+            this.Controls.Add(this.radioNo);
+            this.Controls.Add(this.radioYes);
             this.Controls.Add(this.directoryBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -176,10 +193,11 @@
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.dfsRadio);
             this.Controls.Add(this.bfsRadio);
-            this.Controls.Add(this.checkAll);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -190,7 +208,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkAll;
         private System.Windows.Forms.RadioButton bfsRadio;
         private System.Windows.Forms.RadioButton dfsRadio;
         private System.Windows.Forms.Button startButton;
@@ -202,6 +219,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox directoryBox;
+        private System.Windows.Forms.RadioButton radioYes;
+        private System.Windows.Forms.RadioButton radioNo;
     }
 }
 
