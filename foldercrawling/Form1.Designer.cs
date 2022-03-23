@@ -38,11 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.boxFile = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.directoryBox = new System.Windows.Forms.TextBox();
             this.radioYes = new System.Windows.Forms.RadioButton();
             this.radioNo = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +61,7 @@
             // bfsRadio
             // 
             this.bfsRadio.AutoSize = true;
-            this.bfsRadio.Location = new System.Drawing.Point(19, 238);
+            this.bfsRadio.Location = new System.Drawing.Point(12, 22);
             this.bfsRadio.Margin = new System.Windows.Forms.Padding(4);
             this.bfsRadio.Name = "bfsRadio";
             this.bfsRadio.Size = new System.Drawing.Size(54, 20);
@@ -71,7 +74,7 @@
             // dfsRadio
             // 
             this.dfsRadio.AutoSize = true;
-            this.dfsRadio.Location = new System.Drawing.Point(104, 238);
+            this.dfsRadio.Location = new System.Drawing.Point(132, 22);
             this.dfsRadio.Margin = new System.Windows.Forms.Padding(4);
             this.dfsRadio.Name = "dfsRadio";
             this.dfsRadio.Size = new System.Drawing.Size(55, 20);
@@ -129,15 +132,6 @@
             this.boxFile.TabIndex = 9;
             this.boxFile.TextChanged += new System.EventHandler(this.boxFile_TextChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Select method";
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(487, 12);
@@ -152,11 +146,12 @@
             this.directoryBox.Name = "directoryBox";
             this.directoryBox.Size = new System.Drawing.Size(280, 22);
             this.directoryBox.TabIndex = 12;
+            this.directoryBox.TextChanged += new System.EventHandler(this.directoryBox_TextChanged);
             // 
             // radioYes
             // 
             this.radioYes.AutoSize = true;
-            this.radioYes.Location = new System.Drawing.Point(19, 170);
+            this.radioYes.Location = new System.Drawing.Point(12, 20);
             this.radioYes.Name = "radioYes";
             this.radioYes.Size = new System.Drawing.Size(52, 20);
             this.radioYes.TabIndex = 13;
@@ -168,7 +163,7 @@
             // radioNo
             // 
             this.radioNo.AutoSize = true;
-            this.radioNo.Location = new System.Drawing.Point(104, 170);
+            this.radioNo.Location = new System.Drawing.Point(132, 21);
             this.radioNo.Name = "radioNo";
             this.radioNo.Size = new System.Drawing.Size(46, 20);
             this.radioNo.TabIndex = 14;
@@ -176,30 +171,53 @@
             this.radioNo.Text = "No";
             this.radioNo.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioNo);
+            this.groupBox1.Controls.Add(this.radioYes);
+            this.groupBox1.Location = new System.Drawing.Point(19, 150);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(280, 54);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Find all occurence";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dfsRadio);
+            this.groupBox2.Controls.Add(this.bfsRadio);
+            this.groupBox2.Location = new System.Drawing.Point(19, 210);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(280, 55);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Method";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1049, 372);
-            this.Controls.Add(this.radioNo);
-            this.Controls.Add(this.radioYes);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.directoryBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.boxFile);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.dfsRadio);
-            this.Controls.Add(this.bfsRadio);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,11 +234,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox boxFile;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox directoryBox;
         private System.Windows.Forms.RadioButton radioYes;
         private System.Windows.Forms.RadioButton radioNo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

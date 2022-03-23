@@ -18,6 +18,13 @@ namespace foldercrawling
         string dicari;
         string kemungkinan;
         bool metode;
+
+        // isi atau ga
+
+        bool isiMethod = false;
+        bool isiKemungkinan = false;
+        bool isiRoot = false;
+        bool isiFile = false;
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +35,12 @@ namespace foldercrawling
             if (bfsRadio.Checked)
             {
                 metode = true;
+                isiMethod = true;
             }
             if (dfsRadio.Checked)
             {
                 metode = false;
+                isiMethod = true;
             }
         }
 
@@ -39,18 +48,31 @@ namespace foldercrawling
         private void startButton_Click(object sender, EventArgs e)
         {
             file baru = new file(dicari, kemungkinan);
+            if (isiMethod ==  false || isiKemungkinan == false)
+            {
+                MessageBox.Show("Isi method atau occurence!");
+                return;
+            }
+            if (!isiFile)
+            {
+                MessageBox.Show("Tidak ada file yang dicari!");
+                return;
+            }
+            if (!isiRoot)
+            {
+                MessageBox.Show("Pilih root folder!");
+                return;
+            }
             if (metode == true)
             {
-                label4.Text = kemungkinan;
-                baru.DFS(rootPath);
-                baru.show_graph_DFS();
+                baru.BFS(rootPath);
+                baru.show_graf_BFS();
             }
             else if (metode == false)
             {
-                label4.Text = kemungkinan;
-
-                baru.BFS(rootPath);
-                baru.show_graf_BFS();
+                baru.DFS(rootPath);
+                baru.show_graph_DFS();
+                
             }
         }
 
@@ -60,6 +82,7 @@ namespace foldercrawling
             {
                 rootPath = folderBrowserDialog1.SelectedPath;
                 directoryBox.Text = rootPath;
+                isiRoot = true;
                 
             }
         }
@@ -67,6 +90,7 @@ namespace foldercrawling
         private void boxFile_TextChanged(object sender, EventArgs e)
         {
             dicari = boxFile.Text.ToLower();
+            isiFile = true;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -79,11 +103,18 @@ namespace foldercrawling
             if (radioYes.Checked)
             {
                 kemungkinan = "Y";
+                isiKemungkinan = true;
             }
             if (radioNo.Checked)
             {
                 kemungkinan = "N";
+                isiKemungkinan = true;
             }
+        }
+
+        private void directoryBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
