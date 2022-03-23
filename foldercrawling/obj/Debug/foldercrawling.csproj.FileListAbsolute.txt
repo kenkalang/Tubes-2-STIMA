@@ -48,3 +48,28 @@ D:\Semester 4\tubes2stima\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.
 D:\Semester 4\tubes2stima\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.CopyComplete
 D:\Semester 4\tubes2stima\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.exe
 D:\Semester 4\tubes2stima\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.pdb
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\foldercrawling.exe.config
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\foldercrawling.exe
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\foldercrawling.pdb
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\AutomaticGraphLayout.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\AutomaticGraphLayout.Drawing.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.AssemblyReference.cache
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.SuggestedBindingRedirects.cache
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.Form1.resources
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.Properties.Resources.resources
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.GenerateResource.cache
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.CoreCompileInputs.cache
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.csproj.CopyComplete
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.exe
+C:\Gibran\ITB\STIMA\Tubes-2-STIMA\foldercrawling\obj\Debug\foldercrawling.pdb

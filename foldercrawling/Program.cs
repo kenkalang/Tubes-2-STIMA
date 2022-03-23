@@ -15,37 +15,11 @@ namespace foldercrawling
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
-            string rootPath = @"D:\testfolder";
-
-            Console.WriteLine("Masukkan file : ");
-            string dicari = Console.ReadLine();
-
-            Console.WriteLine("Cari semua kemungkinan? (Y/N)");
-            string kemungkinan = Console.ReadLine();
-
-
-            Console.WriteLine("Metode digunakan : (ketik 1 atau 2)");
-            Console.WriteLine("1. DFS ");
-            Console.WriteLine("2. BFS ");
-            string metode = Console.ReadLine();
-            // string[] dirs = Directory.GetDirectories(rootPath, "*", SearchOption.AllDirectories);
-            //  Console.WriteLine("Hello World!");
-
-            file baru = new file(dicari, kemungkinan);
-
-            if (metode == "1")
-            {
-                baru.DFS(rootPath);
-                baru.show_graph_DFS();
-            }
-
-            else if (metode == "2")
-            {
-                baru.BFS(rootPath);
-                baru.show_graf_BFS();
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
 
 
         }
