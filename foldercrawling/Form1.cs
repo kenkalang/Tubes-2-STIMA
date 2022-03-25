@@ -73,6 +73,7 @@ namespace foldercrawling
             }
             if (metode == true)
             {
+                panel1.Controls.Clear();
                 durasi.Start();
                 baru.BFS(rootPath);
                 durasi.Stop();
@@ -80,11 +81,17 @@ namespace foldercrawling
                     durasi.Elapsed.Minutes, durasi.Elapsed.Seconds, durasi.Elapsed.TotalMilliseconds);
                 labelTaken.Text = ExecutionTimeTaken;
                 baru.show_graf_BFS();
-               
-                
+                panel1.SuspendLayout();
+                baru.viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                panel1.Controls.Add(baru.viewer);
+                panel1.ResumeLayout();
+
+
+
             }
             else if (metode == false)
             {
+                panel1.Controls.Clear();
                 durasi.Start();
                 baru.DFS(rootPath);
                 durasi.Stop();
@@ -92,6 +99,10 @@ namespace foldercrawling
                     durasi.Elapsed.Minutes, durasi.Elapsed.Seconds, durasi.Elapsed.TotalMilliseconds);
                 labelTaken.Text = ExecutionTimeTaken;
                 baru.show_graph_DFS();
+                panel1.SuspendLayout();
+                baru.viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                panel1.Controls.Add(baru.viewer);
+                panel1.ResumeLayout();
 
             }
         }
