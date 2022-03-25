@@ -20,6 +20,7 @@ namespace foldercrawling
         string kemungkinan;
         bool metode;
         Stopwatch durasi = new Stopwatch();
+        List<string> list = new List<string>(); 
 
         // isi atau ga
 
@@ -86,6 +87,25 @@ namespace foldercrawling
                 panel1.Controls.Add(baru.viewer);
                 panel1.ResumeLayout();
 
+                //Bikin hyperlink(s)
+
+                foreach (var obj in baru.displayHasil())
+                {
+                    linkLabel1.Text = obj.ToString();
+                    list.Add(obj.ToString());
+                }
+
+                int currentRow = 0;
+                foreach (var link in list)
+                {
+                    LinkLabel linkLabel = new LinkLabel();
+                    linkLabel.Text = link;
+                    linkLabel.Links.Add(0, link.Length, link);
+                    linkLabel.LinkClicked += OnLinkClicked;
+                    panel.Controls.Add(linkLabel);
+                }
+                this.Controls.Add(panel);
+
 
 
             }
@@ -103,6 +123,26 @@ namespace foldercrawling
                 baru.viewer.Dock = System.Windows.Forms.DockStyle.Fill;
                 panel1.Controls.Add(baru.viewer);
                 panel1.ResumeLayout();
+
+                //Bikin hyperlink(s)
+
+                foreach (var obj in baru.displayHasil())
+                {
+                    linkLabel1.Text = obj.ToString();
+                    list.Add(obj.ToString());
+                }
+                
+                int currentRow = 0;
+                foreach (var link in list)
+                {
+                    LinkLabel linkLabel = new LinkLabel();
+                    linkLabel.Text = link;
+                    linkLabel.Links.Add(0, link.Length, link);
+                    linkLabel.LinkClicked += OnLinkClicked;
+                    panel.Controls.Add(linkLabel);
+                }
+                this.Controls.Add(panel);
+
 
             }
         }
@@ -155,6 +195,23 @@ namespace foldercrawling
                 metode = false;
                 isiMethod = true;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer",linkLabel1.Text);
+        }
+
+        
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

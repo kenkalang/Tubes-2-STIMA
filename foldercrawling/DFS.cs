@@ -59,7 +59,17 @@ namespace pencarian
                 ketemuhasil = new Queue<folderfile>();
                 hasilpath = new Queue<string>();
             }
-
+            
+            public List<string> displayHasil()
+        {
+            List<string> hasil = new List<string>();
+            foreach(var obj in hasilpath)
+            {
+                hasil.Add(obj.ToString());
+            }
+            return hasil;
+        }
+            
             public void BFS(string path)
             {
 
@@ -91,13 +101,13 @@ namespace pencarian
                     {
                         if (kemungkinan == "N" && found == false)
                         {
-                            Console.WriteLine(Path.GetFullPath(path) + " KETEMU JEMBUOTTTTTTT");
+                            Console.WriteLine(Path.GetFullPath(path) );
                             found = true;
 
                         }
                         else
                         {
-                            Console.WriteLine(Path.GetFullPath(path) + " KETEMU JEMBUOTTTTTTT");
+                            Console.WriteLine(Path.GetFullPath(path) );
                         }
                         hasilpath.Enqueue(Path.GetFullPath(path));
                         cari_bapak(path);
@@ -142,14 +152,14 @@ namespace pencarian
                     {
                         if (kemungkinan == "N" && found == false)
                         {
-                            Console.WriteLine(Path.GetFullPath(file) + " KETEMU JEMBUOTTTTTTT");
+                            Console.WriteLine(Path.GetFullPath(file));
                             found = true;
                             hasilpath.Enqueue(Path.GetFullPath(file));
                             cari_bapak(file);
                         }
                         else
                         {
-                            Console.WriteLine(Path.GetFullPath(file) + " KETEMU JEMBUOTTTTTTT");
+                            Console.WriteLine(Path.GetFullPath(file));
                             hasilpath.Enqueue(Path.GetFullPath(file));
                             cari_bapak(file);
                             continue;
@@ -258,7 +268,7 @@ namespace pencarian
                 {
                     tempo = new folderfile(penyimpanan.Dequeue());
 
-                    Console.WriteLine(tempo.anakfolder + "       INI SISA QUEUE QUEUEUEUEUEUEUEUEUU");
+                    Console.WriteLine(tempo.anakfolder);
                 }
             }
 
@@ -269,7 +279,7 @@ namespace pencarian
                 {
                     tempo = new folderfile(fileDFS.Pop());
 
-                    Console.WriteLine(tempo.anakfolder + "       INI SISA QUEUE QUEUEUEUEUEUEUEUEUU");
+                    Console.WriteLine(tempo.anakfolder );
                 }
             }
 

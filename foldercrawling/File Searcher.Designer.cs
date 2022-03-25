@@ -46,6 +46,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTaken = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +69,7 @@
             this.bfsRadio.Location = new System.Drawing.Point(12, 22);
             this.bfsRadio.Margin = new System.Windows.Forms.Padding(4);
             this.bfsRadio.Name = "bfsRadio";
-            this.bfsRadio.Size = new System.Drawing.Size(54, 20);
+            this.bfsRadio.Size = new System.Drawing.Size(51, 20);
             this.bfsRadio.TabIndex = 3;
             this.bfsRadio.TabStop = true;
             this.bfsRadio.Text = "BFS";
@@ -79,7 +82,7 @@
             this.dfsRadio.Location = new System.Drawing.Point(132, 22);
             this.dfsRadio.Margin = new System.Windows.Forms.Padding(4);
             this.dfsRadio.Name = "dfsRadio";
-            this.dfsRadio.Size = new System.Drawing.Size(55, 20);
+            this.dfsRadio.Size = new System.Drawing.Size(52, 20);
             this.dfsRadio.TabIndex = 4;
             this.dfsRadio.TabStop = true;
             this.dfsRadio.Text = "DFS";
@@ -137,6 +140,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Location = new System.Drawing.Point(487, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 348);
@@ -156,7 +160,7 @@
             this.radioYes.AutoSize = true;
             this.radioYes.Location = new System.Drawing.Point(12, 20);
             this.radioYes.Name = "radioYes";
-            this.radioYes.Size = new System.Drawing.Size(52, 20);
+            this.radioYes.Size = new System.Drawing.Size(49, 20);
             this.radioYes.TabIndex = 13;
             this.radioYes.TabStop = true;
             this.radioYes.Text = "Yes";
@@ -168,7 +172,7 @@
             this.radioNo.AutoSize = true;
             this.radioNo.Location = new System.Drawing.Point(132, 21);
             this.radioNo.Name = "radioNo";
-            this.radioNo.Size = new System.Drawing.Size(46, 20);
+            this.radioNo.Size = new System.Drawing.Size(43, 20);
             this.radioNo.TabIndex = 14;
             this.radioNo.TabStop = true;
             this.radioNo.Text = "No";
@@ -199,7 +203,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(498, 367);
+            this.label2.Location = new System.Drawing.Point(496, 395);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 17;
@@ -208,17 +212,35 @@
             // labelTaken
             // 
             this.labelTaken.AutoSize = true;
-            this.labelTaken.Location = new System.Drawing.Point(588, 367);
+            this.labelTaken.Location = new System.Drawing.Point(585, 395);
             this.labelTaken.Name = "labelTaken";
             this.labelTaken.Size = new System.Drawing.Size(0, 16);
             this.labelTaken.TabIndex = 18;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(9, 78);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(10, 16);
+            this.linkLabel1.TabIndex = 19;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = ".";
+            // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(19, 330);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(403, 100);
+            this.panel.TabIndex = 19;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1049, 393);
+            this.ClientSize = new System.Drawing.Size(1049, 437);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.labelTaken);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
@@ -235,7 +257,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "File Searcher";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -264,6 +289,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTaken;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.FlowLayoutPanel panel;
     }
 }
 
