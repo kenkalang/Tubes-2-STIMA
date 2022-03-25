@@ -98,3 +98,28 @@ C:\Users\gibran\Downloads\Compressed\Tubes-2-STIMA-main\Tubes-2-STIMA-main\folde
 C:\Users\gibran\Downloads\Compressed\Tubes-2-STIMA-main\Tubes-2-STIMA-main\foldercrawling\obj\Debug\foldercrawling.csproj.CopyComplete
 C:\Users\gibran\Downloads\Compressed\Tubes-2-STIMA-main\Tubes-2-STIMA-main\foldercrawling\obj\Debug\foldercrawling.exe
 C:\Users\gibran\Downloads\Compressed\Tubes-2-STIMA-main\Tubes-2-STIMA-main\foldercrawling\obj\Debug\foldercrawling.pdb
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\foldercrawling.exe.config
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\foldercrawling.exe
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\foldercrawling.pdb
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\AutomaticGraphLayout.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\AutomaticGraphLayout.Drawing.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.xml
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.csproj.AssemblyReference.cache
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.csproj.SuggestedBindingRedirects.cache
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.Form1.resources
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.Properties.Resources.resources
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.csproj.GenerateResource.cache
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.csproj.CoreCompileInputs.cache
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.csproj.CopyComplete
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.exe
+E:\Gibran\ITB\SEMESTER 4\STIMA\TUBES\DUA\foldercrawling\obj\Debug\foldercrawling.pdb
