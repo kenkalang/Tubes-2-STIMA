@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using foldercrawling;
 using pencarian;
+using System.Diagnostics;
 
 namespace foldercrawling
 {
@@ -18,6 +19,7 @@ namespace foldercrawling
         string dicari;
         string kemungkinan;
         bool metode;
+        Stopwatch durasi = new Stopwatch();
 
         // isi atau ga
 
@@ -47,10 +49,16 @@ namespace foldercrawling
         
         private void startButton_Click(object sender, EventArgs e)
         {
+            
             file baru = new file(dicari, kemungkinan);
-            if (isiMethod ==  false || isiKemungkinan == false)
+            if (isiMethod == false)
             {
-                MessageBox.Show("Isi method atau occurence!");
+                MessageBox.Show("Isi method!");
+                return;
+            }
+            if (!isiKemungkinan)
+            {
+                MessageBox.Show("Isi occurence!");
                 return;
             }
             if (!isiFile)
@@ -65,14 +73,26 @@ namespace foldercrawling
             }
             if (metode == true)
             {
+                durasi.Start();
                 baru.BFS(rootPath);
+                durasi.Stop();
+                string ExecutionTimeTaken = string.Format("Minutes :{0} Seconds :{1} Mili seconds :{2}",
+                    durasi.Elapsed.Minutes, durasi.Elapsed.Seconds, durasi.Elapsed.TotalMilliseconds);
+                labelTaken.Text = ExecutionTimeTaken;
                 baru.show_graf_BFS();
+               
+                
             }
             else if (metode == false)
             {
+                durasi.Start();
                 baru.DFS(rootPath);
+                durasi.Stop();
+                string ExecutionTimeTaken = string.Format("Minutes :{0} Seconds :{1} Mili seconds :{2}",
+                    durasi.Elapsed.Minutes, durasi.Elapsed.Seconds, durasi.Elapsed.TotalMilliseconds);
+                labelTaken.Text = ExecutionTimeTaken;
                 baru.show_graph_DFS();
-                
+
             }
         }
 
@@ -115,6 +135,15 @@ namespace foldercrawling
         private void directoryBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dfsRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dfsRadio.Checked)
+            {
+                metode = false;
+                isiMethod = true;
+            }
         }
     }
 }

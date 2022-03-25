@@ -44,6 +44,8 @@
             this.radioNo = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelTaken = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +84,7 @@
             this.dfsRadio.TabStop = true;
             this.dfsRadio.Text = "DFS";
             this.dfsRadio.UseVisualStyleBackColor = true;
+            this.dfsRadio.CheckedChanged += new System.EventHandler(this.dfsRadio_CheckedChanged);
             // 
             // startButton
             // 
@@ -193,12 +196,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Method";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(498, 367);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Time taken : ";
+            // 
+            // labelTaken
+            // 
+            this.labelTaken.AutoSize = true;
+            this.labelTaken.Location = new System.Drawing.Point(588, 367);
+            this.labelTaken.Name = "labelTaken";
+            this.labelTaken.Size = new System.Drawing.Size(0, 16);
+            this.labelTaken.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1049, 372);
+            this.ClientSize = new System.Drawing.Size(1049, 393);
+            this.Controls.Add(this.labelTaken);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.directoryBox);
             this.Controls.Add(this.panel1);
@@ -240,6 +262,8 @@
         private System.Windows.Forms.RadioButton radioNo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelTaken;
     }
 }
 
